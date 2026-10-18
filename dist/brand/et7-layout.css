@@ -31,3 +31,8 @@ html{scroll-padding-top:80px}body{margin:0;overflow-x:clip}
 
 /* Mobile artwork is composed at 2:1; show its natural proportions without cropping or letterboxing. */
 @media(max-width:1023px){#Home .aw9-hero-picture{aspect-ratio:2/1;background:transparent}#Home .aw9-hero-picture>img{width:100%!important;height:auto!important;aspect-ratio:2/1!important;object-fit:contain!important}}
+
+/* ET7 mark beside the intro heading, including localized heading text. */
+h1:has(+p){display:flex;align-items:center;justify-content:center;gap:16px;max-width:1100px;margin-left:auto!important;margin-right:auto!important;padding-inline:20px!important}
+h1:has(+p)::before{content:"";display:block;width:76px;height:76px;flex:0 0 76px;background:url("et7-icon.png") center/contain no-repeat}
+@media(max-width:640px){h1:has(+p){gap:12px;padding-inline:16px!important;text-align:left!important;font-size:18px!important}h1:has(+p)::before{width:56px;height:56px;flex-basis:56px}}
