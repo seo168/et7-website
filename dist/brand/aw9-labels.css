@@ -1,0 +1,191 @@
+.aw9-platform-label{display:block;text-align:center;font-size:1.4rem;font-weight:800;line-height:1.4;color:inherit;margin-top:.4rem}
+@media(max-width:1279px){.aw9-platform-label{display:none}}
+
+/* Mobile platform rows: identity on the left, action on the right. */
+.aw9-mobile-platforms{gap:20px;padding:16px 8px}
+.aw9-platform-row{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:center;gap:12px;width:100%;min-width:0;cursor:pointer}
+.aw9-platform-row .aw9-platform-info{display:grid;grid-template-columns:56px minmax(0,1fr);align-items:center;gap:12px;min-width:0}
+.aw9-platform-info>div:first-child{width:56px;height:56px}
+.aw9-platform-text{min-width:0;overflow:hidden}
+.aw9-platform-text>div{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aw9-platform-play{min-width:100px;padding:10px 12px;font-size:12px;line-height:1.2;white-space:nowrap}
+.aw9-platform-countdown{min-width:112px;padding:10px 12px;font-size:14px;line-height:1.2;white-space:nowrap}
+.aw9-platform-countdown .flex{flex-wrap:nowrap}
+@media(max-width:360px){.aw9-platform-row{gap:8px}.aw9-platform-row .aw9-platform-info{grid-template-columns:44px minmax(0,1fr);gap:8px}.aw9-platform-info>div:first-child{width:44px;height:44px}.aw9-platform-play{min-width:88px;padding:10px 8px}.aw9-platform-countdown{min-width:104px;padding:10px 8px;font-size:13px}}
+/* Upcoming platform spans the row; available platforms form two columns. */
+.aw9-mobile-platforms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
+.aw9-platform-coming{grid-column:1/-1}
+.aw9-platform-row:not(.aw9-platform-coming){grid-template-columns:minmax(0,1fr);gap:12px;align-content:start}
+.aw9-platform-row:not(.aw9-platform-coming) .aw9-platform-info{grid-template-columns:minmax(0,1fr);justify-items:center;gap:8px;text-align:center}
+.aw9-platform-row:not(.aw9-platform-coming) .aw9-platform-info>div:first-child{width:64px;height:64px}
+.aw9-platform-row:not(.aw9-platform-coming) .aw9-platform-text{width:100%}
+.aw9-platform-row:not(.aw9-platform-coming) .aw9-platform-play{width:100%;min-width:0}
+.aw9-platform-coming .aw9-platform-info{grid-template-columns:64px minmax(0,1fr)}
+.aw9-platform-coming .aw9-platform-info>div:first-child{width:64px;height:64px}
+/* Mobile card presentation, retaining the two-platform layout. */
+.aw9-mobile-platforms{background:transparent;padding:16px 0;gap:14px 12px}
+.aw9-platform-row{background:linear-gradient(145deg,#252c29,#1d2321);border:1px solid #354139;border-radius:16px;padding:18px 12px 12px;box-sizing:border-box;box-shadow:0 4px 14px #00000020}
+.aw9-platform-coming{padding:18px 12px;border-color:#4b603d;background:linear-gradient(110deg,#293326,#1e2621)}
+.aw9-platform-row:not(.aw9-platform-coming){gap:12px}
+.aw9-platform-row:not(.aw9-platform-coming) .aw9-platform-info{gap:12px}
+.aw9-platform-text>div:first-child{font-size:15px;line-height:20px;letter-spacing:.1px}
+.aw9-platform-text>div:last-child{font-size:11px;line-height:15px;color:#aab5ae;margin-top:4px}
+.aw9-platform-row:not(.aw9-platform-coming) .aw9-platform-text>div:last-child{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:30px;max-height:30px}
+.aw9-platform-play{border-radius:12px;min-height:38px;font-size:12px;background:linear-gradient(105deg,#b5ef48,#65e62f);box-shadow:0 2px 5px #00000026}
+.aw9-platform-row:not(.aw9-platform-coming)>div:last-child>div:last-child:not(.aw9-platform-play){display:none}
+.aw9-platform-countdown{border-radius:12px;background:#151c16;border:1px solid #587343;min-width:104px;font-variant-numeric:tabular-nums;letter-spacing:.3px;padding:12px 8px}
+.aw9-platform-coming .aw9-platform-info{gap:10px}
+.aw9-platform-coming .aw9-platform-text>div:last-child{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;max-height:30px;margin-top:0}
+@media(max-width:360px){.aw9-mobile-platforms{gap:12px 10px}.aw9-platform-row{padding:16px 10px 10px}.aw9-platform-coming{padding:16px 8px;gap:6px}.aw9-platform-coming .aw9-platform-info{gap:8px}.aw9-platform-countdown{min-width:94px;font-size:12px;padding:11px 6px}.aw9-platform-text>div:first-child{font-size:14px}}
+/* Highlight the upcoming launch without changing the platform grid. */
+.aw9-platform-coming{position:relative;margin-top:12px;padding-top:26px;border:1px solid #d4ac4e;background:linear-gradient(115deg,#363020,#242a20 60%,#20271f);box-shadow:0 0 0 1px #f4cb5820,0 4px 22px #edba3420;animation:aw9-launch-glow 3s ease-in-out infinite}
+.aw9-platform-coming::before{content:"COMING SOON";position:absolute;top:-12px;left:16px;padding:5px 12px;border-radius:7px;background:linear-gradient(105deg,#ffe398,#e6b544);color:#241a06;font-size:11px;font-weight:800;line-height:14px;letter-spacing:1.2px;box-shadow:0 3px 10px #0004}
+.aw9-platform-coming .aw9-platform-countdown{color:#ffe39b;background:#1d2117;border-color:#b7994e;box-shadow:inset 0 0 12px #e6b5440c}
+@keyframes aw9-launch-glow{0%,100%{box-shadow:0 0 0 1px #f4cb5820,0 4px 18px #edba3417}50%{box-shadow:0 0 0 1px #f4cb5840,0 4px 24px #edba3433}}
+@media(prefers-reduced-motion:reduce){.aw9-platform-coming{animation:none}}
+/* Platform names remain compact after removing their descriptions. */
+.aw9-platform-row:not(.aw9-platform-coming) .aw9-platform-text>div:first-child{display:block;min-height:0;max-height:none;margin:0;font-size:15px;line-height:20px;color:#fff;white-space:nowrap}
+/* Fit the supplied portrait artwork and its live controls to the viewport. */
+.aw9-launch-modal{width:min(440px,94vw,calc((100svh - 70px)*.632));min-width:0!important;max-width:94vw!important;container-type:inline-size}
+.aw9-launch-art{width:100%;min-width:0!important;min-height:0!important}
+.aw9-launch-art>img{display:block;width:100%;height:auto}
+.aw9-launch-content{top:40%;bottom:6%;padding:0 10%;gap:0;justify-content:space-evenly}
+.aw9-launch-content>div,.aw9-launch-content>section,.aw9-launch-content>button{margin-top:0!important;margin-bottom:0!important}
+.aw9-launch-content>div{font-size:4cqw;line-height:1.2}
+.aw9-launch-content>div:first-child{font-size:5cqw;font-weight:800}
+.aw9-launch-content>section .flex.gap-\[1\.5rem\]{gap:3cqw}
+.aw9-launch-content>section .flex.flex-col>div{width:12cqw;height:12cqw;font-size:6cqw;border-color:#d8aa42;box-shadow:0 0 8px #d8aa4240}
+.aw9-launch-content>section p{font-size:3cqw;margin-top:1cqw}
+.aw9-launch-content>div.whitespace-nowrap{font-size:2.7cqw;padding:2cqw 1cqw}
+.aw9-launch-content>button{min-height:0;padding:2cqw!important;font-size:3.5cqw!important}
+.aw9-launch-content>.aw9-telegram-compact{width:52px!important;height:36px;align-self:center;padding:6px!important;border-radius:10px}
+.aw9-launch-content>.aw9-telegram-compact .icon-telegram{font-size:22px}
+.aw9-launch-content>.aw9-telegram-compact{width:46cqw!important;max-width:200px}
+.aw9-telegram-compact .text-\[\#fff\]{gap:8px}
+.aw9-telegram-compact{white-space:nowrap}
+
+/* Partner logos retain their proportions in the existing card grid. */
+#aw9-partners .aw9-partner-logo{width:min(80%,20rem);height:auto;aspect-ratio:5/2;object-fit:contain;display:block}
+#aw9-partners .aw9-partner-pending{display:flex;align-items:center;justify-content:center;width:80%;aspect-ratio:5/2;font-size:2rem;font-weight:700;color:#fff}
+#aw9-partners>section>div{min-width:0}
+@media(max-width:639px){#aw9-partners .aw9-partner-logo{width:min(80%,13.2rem)}}
+#aw9-partners img[alt="EZUGI"]{background:#f6f6f6;border-radius:.5rem;padding:.7rem;box-sizing:border-box}
+
+/* Compact original-sized cards, with vector and lossless logos. */
+#aw9-partners>section>div{height:11rem;padding:1.5rem;box-sizing:border-box}
+#aw9-partners .aw9-partner-logo{width:76%;max-width:18rem;height:6rem;aspect-ratio:auto;object-fit:contain}
+#aw9-partners .aw9-partner-pending{width:76%;height:6rem;aspect-ratio:auto;font-size:2rem}
+@media(max-width:639px){#aw9-partners>section>div{height:8.5rem;padding:1.2rem}#aw9-partners .aw9-partner-logo{width:76%;max-width:12rem;height:4rem}#aw9-partners .aw9-partner-pending{height:4rem;font-size:1.8rem}}
+/* Keep coming-soon copy clear of the inherited rounded clipping mask. */
+.aw9-platform-coming .aw9-platform-text{overflow:visible}
+.aw9-platform-coming .aw9-platform-text>div{border-radius:0}
+.aw9-platform-coming .aw9-platform-text>div:last-child{display:block;-webkit-line-clamp:unset;max-height:none;overflow:visible;text-overflow:clip;white-space:normal;overflow-wrap:anywhere;line-height:1.4}
+
+.aw9-platform-pending{display:flex;align-items:center;justify-content:center;width:100%;min-height:38px;padding:10px 12px;border:1px solid #58615b;border-radius:12px;background:#343d37;color:#cbd1cc;font-size:12px;font-weight:800;line-height:1.2;cursor:default}
+
+/* ET7 has its own launch date; ET7 retains the primary gold treatment. */
+.aw9-platform-coming.aw9-platform-secondary{border-color:#53635b;background:linear-gradient(115deg,#28312c,#202722);box-shadow:none;animation:none;cursor:default}
+.aw9-platform-coming.aw9-platform-secondary::before{background:#49594f;color:#eef4ef;box-shadow:none}
+.aw9-platform-coming.aw9-platform-secondary .aw9-platform-countdown{color:#d9e6dd;background:#202823;border-color:#65786b;box-shadow:none;cursor:default}
+/* Compact desktop hero only; mobile retains its original layout. */
+@media(min-width:1281px){
+ #Home .swiper-slide{height:clamp(420px,60vh,560px);display:flex;align-items:center;justify-content:center}
+ #Home .swiper-slide>img{width:100%;height:100%;object-fit:contain}
+}
+
+.aw9-launch-content>.aw9-popup-brand{font-size:5cqw;font-weight:800;color:#ffe39b;line-height:1.2;text-align:center}
+
+.aw9-market-intro{margin-top:8px;color:#c8c8c8;font-size:14px;line-height:1.5}
+@media(min-width:1281px){.aw9-market-intro{font-size:20px}}
+
+.aw9-earn-card{position:relative;padding:12px 52px 12px 12px;min-height:100px}
+.aw9-earn-original{display:flex;align-items:center;gap:12px;min-height:76px}
+.aw9-earn-copy{min-width:0;flex:1}
+.aw9-earn-copy p{line-height:1.4}
+.aw9-earn-extra>summary{position:absolute;right:12px;top:32px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;list-style:none;border:1px solid #536159;border-radius:8px;color:#a5ed42}
+.aw9-earn-extra>summary::-webkit-details-marker{display:none}
+.aw9-earn-extra>summary:focus-visible{outline:2px solid #a5ed42;outline-offset:2px}
+.aw9-earn-chevron{font-size:24px;transition:transform .2s}
+.aw9-earn-extra[open] .aw9-earn-chevron{transform:rotate(180deg)}
+.aw9-earn-extra-content{margin-top:12px;border-top:1px solid #48534b;padding-top:12px;min-height:32px}
+@media(min-width:1281px){.aw9-earn-card{padding:16px 60px 16px 16px;min-height:21.2rem}.aw9-earn-original{min-height:18rem}.aw9-earn-extra>summary{top:calc(10.6rem - 16px)}}
+
+/* Franchise rules: readable text and locally scrollable tables on narrow screens. */
+.aw9-franchise{font-size:14px;line-height:1.65;color:#d5ddd7;overflow-wrap:anywhere;text-align:left}
+.aw9-franchise h4{font-size:22px;color:#b2ef56;font-weight:800;margin:4px 0 12px}
+.aw9-franchise h5{font-size:18px;color:#f5d780;font-weight:700;margin:24px 0 10px}
+.aw9-franchise p{margin:10px 0}
+.aw9-franchise-table{max-width:100%;overflow-x:auto;margin:18px 0;border:1px solid #515d50;border-radius:10px}
+.aw9-franchise table{width:100%;border-collapse:collapse;font-size:13px}
+.aw9-franchise caption{text-align:left;padding:12px;color:#f5d780;font-weight:700;background:#202722}
+.aw9-franchise th,.aw9-franchise td{padding:10px 12px;border-top:1px solid #404b42;text-align:left;min-width:80px}
+.aw9-franchise thead{background:#2e382f;color:#eef5e9}
+.aw9-franchise tbody th{font-weight:500}
+.aw9-agent-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:0;list-style:none}
+.aw9-agent-levels li{padding:12px;border:1px solid #515d50;border-radius:10px;background:#202722}
+.aw9-agent-levels strong,.aw9-agent-levels span{display:block}
+.aw9-agent-levels strong{color:#f5d780;margin-bottom:6px}
+.aw9-franchise-faq dt{font-weight:700;color:#f5d780;margin:18px 0 6px}
+.aw9-franchise-faq dd{margin:0;padding-bottom:14px;border-bottom:1px solid #404b42}
+@media(max-width:600px){.aw9-earn-extra-content:has(.aw9-franchise){margin-right:-40px}.aw9-franchise h4{font-size:19px}.aw9-agent-levels{grid-template-columns:1fr}.aw9-franchise th,.aw9-franchise td{padding:8px}}
+
+.aw9-agent-steps{padding-left:22px;margin:12px 0;list-style:decimal}.aw9-agent-steps li{padding-left:4px;margin:10px 0}.aw9-agent ul.aw9-agent-steps{list-style:disc}
+
+/* Center partnership content within equal card gutters. */
+.aw9-earn-card{padding-right:12px}
+.aw9-earn-original{padding-right:40px}
+.aw9-earn-extra-content:has(.aw9-franchise){margin-right:0}
+.aw9-franchise{width:100%;max-width:960px;margin-inline:auto;text-align:center}
+.aw9-franchise p,.aw9-franchise-faq{max-width:760px;margin-left:auto;margin-right:auto}
+.aw9-franchise caption,.aw9-franchise th,.aw9-franchise td{text-align:center;vertical-align:middle}
+.aw9-franchise .aw9-agent-steps{max-width:760px;margin:12px auto;padding-left:0;list-style-position:inside}
+.aw9-franchise .aw9-agent-steps li{padding-left:0}
+@media(min-width:1281px){.aw9-earn-card{padding-right:16px}.aw9-earn-original{padding-right:44px}}
+
+/* Real HTML branding and visible banner copy. */
+.aw9-html-wordmark{display:inline-block;font-size:clamp(28px,5vw,72px);font-weight:900;line-height:1.15;letter-spacing:.03em;color:#f6d078;text-shadow:0 2px 2px #6e380c}
+#Home .swiper-slide{position:relative}
+.aw9-banner-caption{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:720px;padding:10px 14px;background:rgba(16,22,22,.94);border:1px solid #77623a;border-radius:10px;text-align:center;color:#fff;pointer-events:none}
+.aw9-banner-caption strong,.aw9-banner-caption span{display:block}
+.aw9-banner-caption strong{font-size:16px;line-height:1.3;color:#f6d078}
+.aw9-banner-caption span{font-size:12px;line-height:1.4;margin-top:4px}
+@media(min-width:1281px){.aw9-banner-caption{bottom:24px;padding:12px 20px}.aw9-banner-caption strong{font-size:23px}.aw9-banner-caption span{font-size:16px}}
+
+/* Collapse the unused social-link tray instead of reserving empty space. */
+#BrandNews .aw9-social-links:not(:has(img)){display:none}
+#BrandNews + #aw9-partners>div:first-child{margin-top:18px}
+
+/* Let mobile game descriptions determine the carousel height. */
+.aw9-game-brief-mobile .swiper-slide{height:auto}
+.aw9-game-brief-mobile .swiper-slide>div{height:auto;padding-bottom:16px}
+
+/* Clear, touch-friendly expand controls for partnership cards. */
+.aw9-earn-original{position:relative;padding-right:52px}
+.aw9-earn-extra>summary{width:44px;height:44px;right:12px;top:28px;border:1px solid #a6ed48;border-radius:12px;background:linear-gradient(145deg,#b8f34a,#68db28);color:#152310;box-shadow:0 3px 9px #0005,inset 0 1px 0 #e6ffab;transition:background .18s,box-shadow .18s}
+.aw9-earn-extra>summary:hover{background:#c2ff62;box-shadow:0 4px 12px #0007}
+.aw9-earn-extra>summary:active{background:#8de335;box-shadow:inset 0 2px 5px #0003}
+.aw9-earn-chevron{display:block;width:10px;height:10px;font-size:0;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .2s}
+.aw9-earn-extra[open] .aw9-earn-chevron{transform:translateY(3px) rotate(225deg)}
+@media(min-width:1281px){.aw9-earn-extra>summary{right:16px;top:calc(10.6rem - 22px)}}
+@media(prefers-reduced-motion:reduce){.aw9-earn-chevron,.aw9-earn-extra>summary{transition:none}}
+
+/* Keep searchable banner copy below the artwork, never over it. */
+#Home .swiper-slide{display:flex;flex-direction:column;height:auto}
+.aw9-banner-caption{position:static;transform:none;flex:none;width:calc(100% - 24px);max-width:720px;margin:10px auto 24px}
+@media(min-width:1281px){#Home .swiper-slide{height:auto}#Home .swiper-slide>img{height:clamp(420px,60vh,560px);flex:none;object-fit:contain}}
+
+#BrandNews .aw9-social-links{display:flex;flex-wrap:wrap;gap:16px;background:transparent;margin-top:16px;padding:8px 0 24px}
+.aw9-social-item{margin:0;display:flex;flex-direction:column;align-items:center;gap:7px;color:#dedede;font-size:11px;line-height:1.3}
+.aw9-social-icon{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px #0004;border:1px solid #ffffff30}
+.aw9-social-icon img{width:24px;height:24px;object-fit:contain}
+.aw9-social-telegram{background:#229ed9}.aw9-social-whatsapp{background:#168b45}.aw9-social-facebook{background:#1877f2}.aw9-social-instagram{background:linear-gradient(35deg,#f9ce34,#ee2a7b,#6228d7)}.aw9-social-x{background:#090909}
+@media(max-width:360px){#BrandNews .aw9-social-links{gap:10px}.aw9-social-item{font-size:10px}.aw9-social-icon{width:40px;height:40px}}
+
+.aw9-hero-picture{display:block;width:100%;flex:none}.aw9-hero-picture>img{display:block;width:100%;height:auto}
+/* Full-width landscape desktop banner matching the reference proportions. */
+@media(min-width:1024px){#Home .swiper-slide{height:auto}#Home .aw9-hero-picture>img{width:100%;height:auto;aspect-ratio:1748/900;object-fit:contain}}
+
+/* Restrained social branding to match the dark site palette. */
+#BrandNews .aw9-social-icon{background:#252b28;border:1px solid #414c45;box-shadow:none;border-radius:12px}
+#BrandNews .aw9-social-icon img{opacity:.85}
+#BrandNews .aw9-social-item{color:#b9c2bc;font-weight:500}

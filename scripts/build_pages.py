@@ -1,0 +1,23 @@
+from pathlib import Path
+import os,re,shutil
+root=Path(__file__).resolve().parents[1]
+repo=os.environ.get('GITHUB_REPOSITORY','seo168/et7-website')
+owner,name=repo.split('/')
+base='/' if name==owner+'.github.io' else '/'+name+'/'
+site=root/'_site'
+if site.exists():shutil.rmtree(site)
+shutil.copytree(root/'dist',site)
+for p in site.rglob('*'):
+ if not p.is_file() or not (p.suffix in ['.html','.js','.css','.json'] or p.parent.name=='api'):continue
+ s=p.read_text()
+ s=re.sub(r'(?<![A-Za-z0-9_/-])/(aw9-v107|brand|media|global|api)/',lambda m:base+m[1]+'/',s)
+ s=s.replace('"aw9-v107/','"'+base.lstrip('/')+'aw9-v107/')
+ s=s.replace('http://127.0.0.1:4173','https://'+owner+'.github.io')
+ s=s.replace('D(ye,{routes:ve,','D(ye,{base:'+repr(base)+',routes:ve,')
+ s=s.replace('href="/"','href="'+base+'"')
+ p.write_text(s)
+error_html=(site/'index.html').read_text()
+error_html=re.sub(r'<meta name="robots" content="[^"]*">','<meta name="robots" content="noindex, follow">',error_html)
+(site/'404.html').write_text(error_html)
+(site/'.nojekyll').touch()
+print('Prepared GitHub Pages at https://'+owner+'.github.io'+base)

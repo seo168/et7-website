@@ -1,0 +1,25 @@
+{
+  "tool": "built-in imagegen",
+  "edits": [
+    {
+      "source": "71917cf63edf7486.png",
+      "output": "aw9-launch.png",
+      "prompt": "Replace only Diwa branding with ET7; preserve composition, characters, colors, other text, and aspect ratio."
+    },
+    {
+      "source": "50bb38a198269780.webp",
+      "output": "aw9-garuda-desktop.png",
+      "prompt": "Replace only Diwa branding with ET7; preserve composition, characters, colors, other text, and aspect ratio."
+    },
+    {
+      "source": "46c176a7c5edda27.webp",
+      "output": "aw9-garuda-mobile.png",
+      "prompt": "Replace only Diwa branding with ET7; preserve composition, characters, colors, other text, and aspect ratio."
+    },
+    {
+      "source": "game116.CI6i-ylL.webp",
+      "output": "aw9-vampire.png",
+      "prompt": "Replace only Diwa branding with ET7; preserve composition, characters, colors, other text, and aspect ratio."
+    }
+  ]
+}

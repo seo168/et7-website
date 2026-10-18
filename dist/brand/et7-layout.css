@@ -1,0 +1,24 @@
+/* Retain AW9's layout; isolate the square ET7 logo from its original wide wordmark slot. */
+html{scroll-padding-top:80px}body{margin:0;overflow-x:clip}
+[data-et7-header] img{width:44px!important;height:44px!important;object-fit:contain!important;flex:none}
+[data-et7-header]{min-height:64px;height:auto!important}
+[data-et7-header] [data-et7-brand]{display:flex;align-items:center;min-width:0;gap:10px}
+[data-et7-header] [data-et7-brand]>div{min-width:0;white-space:normal;line-height:1.4}
+[data-et7-header] [data-et7-brand]>div>div{line-height:1.4!important;max-width:260px}
+[data-et7-header] [data-et7-brand]>div>div:first-child{font-size:16px!important}
+[data-et7-header] [data-et7-brand]>div>div:last-child{font-size:11px!important}
+#app{padding-top:var(--et7-header-height,64px)}
+#Home{padding-top:0!important}
+#Home .swiper{max-width:100%;margin-top:0!important}
+#Games,#AppDownload,#Earn,#JackpotWinner,#BrandNews{scroll-margin-top:var(--et7-header-height,64px)}
+.aw9-hero-picture,.aw9-hero-picture img{display:block;width:100%;height:auto}
+.et7-reference-note{position:relative;padding:12px 18px;line-height:1.6;font-size:11px;color:#aab5ae;text-align:center;border-top:1px solid #394039;background:#181d1b}
+@media(max-width:640px){[data-et7-header] img{width:36px!important;height:36px!important}[data-et7-header]{min-height:58px}[data-et7-header] [data-et7-brand]>div>div:last-child{font-size:9px!important;max-width:180px}.aw9-mobile-platforms{grid-template-columns:minmax(0,1fr)!important}.aw9-platform-row{width:100%;max-width:560px;margin:0 auto}.aw9-hero-picture img{aspect-ratio:auto!important}.aw9-banner-caption{max-width:calc(100% - 24px)}#Home h1{line-height:1.45!important;font-size:20px!important;padding-inline:8px}h2{line-height:1.4!important}#aw9-partners{overflow:hidden}}
+#app{padding-top:0!important}.page-box{padding-top:var(--et7-header-height,64px)!important}
+[data-et7-header]>div:first-child{height:64px!important;padding-block:8px!important}
+[data-et7-brand] p{line-height:1.4!important;margin-top:0!important}
+[data-et7-brand] p:first-child{font-size:16px!important}
+[data-et7-brand] p:last-child{font-size:11px!important;max-width:260px}
+@media(max-width:640px){[data-et7-header]>div:first-child{height:58px!important}[data-et7-brand] p:last-child{font-size:9px!important;max-width:170px}}
+.draggable-float.tool-btn-r{left:auto!important;right:12px!important;top:auto!important;bottom:32px!important;transform:none!important;z-index:90!important;width:44px!important;height:44px!important}
+@media(min-width:1024px){.draggable-float.tool-btn-r{right:20px!important;bottom:80px!important}}
