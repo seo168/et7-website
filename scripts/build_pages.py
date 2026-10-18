@@ -1,5 +1,5 @@
 from pathlib import Path
-import os,re,shutil
+import os,re,shutil,hashlib
 root=Path(__file__).resolve().parents[1]
 repo=os.environ.get('GITHUB_REPOSITORY','seo168/et7-website')
 owner,name=repo.split('/')
@@ -16,6 +16,16 @@ for p in site.rglob('*'):
  s=s.replace('D(ye,{routes:ve,','D(ye,{base:'+repr(base)+',routes:ve,')
  s=s.replace('href="/"','href="'+base+'"')
  p.write_text(s)
+# Version the complete JS module graph so existing mobile browsers fetch updated UI.
+js_files=sorted(site.rglob('*.js'))
+revision=hashlib.sha256(b''.join(p.read_bytes() for p in js_files)).hexdigest()[:12]
+renames={p.name:p.stem+'.rev-'+revision+'.js' for p in js_files}
+for p in site.rglob('*'):
+ if not p.is_file() or p.suffix not in ('.html','.js','.css','.json'):continue
+ text=p.read_text()
+ for old,new in renames.items():text=text.replace(old,new)
+ p.write_text(text)
+for p in js_files:p.rename(p.with_name(renames[p.name]))
 # Materialize language routes so direct visits and refreshes return HTTP 200.
 for lang in ('hi', 'en'):
  (site/lang).mkdir(exist_ok=True)
