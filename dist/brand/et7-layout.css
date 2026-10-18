@@ -28,3 +28,6 @@ html{scroll-padding-top:80px}body{margin:0;overflow-x:clip}
 @media(max-width:1023px){#Home .swiper-slide{height:auto!important}#Home .aw9-hero-picture{aspect-ratio:2/1;overflow:hidden}#Home .aw9-hero-picture>img{width:100%!important;height:100%!important;aspect-ratio:2/1!important;object-fit:contain!important;object-position:center}}
 
 @media(max-width:1023px){#Home .aw9-hero-picture{background:#181d1b}#Home .aw9-hero-picture>img{object-fit:contain!important}}
+
+/* Mobile artwork is composed at 2:1; show its natural proportions without cropping or letterboxing. */
+@media(max-width:1023px){#Home .aw9-hero-picture{aspect-ratio:2/1;background:transparent}#Home .aw9-hero-picture>img{width:100%!important;height:auto!important;aspect-ratio:2/1!important;object-fit:contain!important}}
