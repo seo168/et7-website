@@ -23,3 +23,6 @@ html{scroll-padding-top:80px}body{margin:0;overflow-x:clip}
 .draggable-float.tool-btn-r{left:auto!important;right:12px!important;top:auto!important;bottom:32px!important;transform:none!important;z-index:90!important;width:44px!important;height:44px!important}
 @media(min-width:1024px){.draggable-float.tool-btn-r{right:20px!important;bottom:80px!important}}
 @media(min-width:1280px){[data-et7-header]>div:first-child{padding-inline:32px!important}[data-et7-brand]{flex-direction:row!important;max-width:310px}[data-et7-brand] img{margin:0 10px 0 0!important}[data-et7-brand] p{max-width:200px!important;font-size:11px!important}[data-et7-header] nav{gap:24px!important;overflow:visible!important;max-width:none!important}[data-et7-header] nav>div{height:64px!important;flex:none;overflow:visible!important;white-space:nowrap}[data-et7-header] nav>div>div:first-child{font-size:15px!important}[data-et7-header] .icon-ENG{font-size:28px!important;margin-left:24px!important}}
+
+/* Compact mobile banners use the landscape artwork, preserving the full composition. */
+@media(max-width:1023px){#Home .swiper-slide{height:auto!important}#Home .aw9-hero-picture{aspect-ratio:2/1;overflow:hidden}#Home .aw9-hero-picture>img{width:100%!important;height:100%!important;aspect-ratio:2/1!important;object-fit:cover!important;object-position:center}}
