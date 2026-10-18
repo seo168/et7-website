@@ -16,6 +16,10 @@ for p in site.rglob('*'):
  s=s.replace('D(ye,{routes:ve,','D(ye,{base:'+repr(base)+',routes:ve,')
  s=s.replace('href="/"','href="'+base+'"')
  p.write_text(s)
+# Materialize language routes so direct visits and refreshes return HTTP 200.
+for lang in ('hi', 'en'):
+ (site/lang).mkdir(exist_ok=True)
+ (site/lang/'index.html').write_text((site/'index.html').read_text())
 error_html=(site/'index.html').read_text()
 error_html=re.sub(r'<meta name="robots" content="[^"]*">','<meta name="robots" content="noindex, follow">',error_html)
 (site/'404.html').write_text(error_html)
