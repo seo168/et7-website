@@ -40,6 +40,8 @@ for lang in ('hi', 'en'):
  (site/lang/'index.html').write_text(localized)
 (site/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>'+origin+'/</loc></url><url><loc>'+origin+'/hi/</loc></url></urlset>')
 (site/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+origin+'/sitemap.xml\n')
+from generate_pages import generate
+generate(site,origin)
 error_html=(site/'index.html').read_text()
 error_html=re.sub(r'<meta name="robots" content="[^"]*">','<meta name="robots" content="noindex, follow">',error_html)
 (site/'404.html').write_text(error_html)
