@@ -32,7 +32,14 @@ for p in js_files:p.rename(p.with_name(renames[p.name]))
 # Materialize language routes so direct visits and refreshes return HTTP 200.
 for lang in ('hi', 'en'):
  (site/lang).mkdir(exist_ok=True)
- (site/lang/'index.html').write_text((site/'index.html').read_text())
+ localized=(site/'index.html').read_text()
+ canonical=origin+'/hi/' if lang=='hi' else origin+'/'
+ localized=re.sub(r'(<link rel="canonical" href=")[^"]*(")',lambda m:m[1]+canonical+m[2],localized)
+ localized=re.sub(r'(<meta property="og:url" content=")[^"]*(")',lambda m:m[1]+canonical+m[2],localized)
+ localized=re.sub(r'<html\s+lang="[^"]*"', '<html lang="'+('hi-IN' if lang=='hi' else 'en-IN')+'"', localized)
+ (site/lang/'index.html').write_text(localized)
+(site/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>'+origin+'/</loc></url><url><loc>'+origin+'/hi/</loc></url></urlset>')
+(site/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+origin+'/sitemap.xml\n')
 error_html=(site/'index.html').read_text()
 error_html=re.sub(r'<meta name="robots" content="[^"]*">','<meta name="robots" content="noindex, follow">',error_html)
 (site/'404.html').write_text(error_html)
